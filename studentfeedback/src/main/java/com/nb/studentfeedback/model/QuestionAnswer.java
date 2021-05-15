@@ -9,13 +9,9 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 public class QuestionAnswer {
-    private String questionName;
-    private String questionDescription;
+    private List question;
     private int questionNumber;
-    private String answer;
-    private Date answerDate;
+    private List answer;
+    private Date eventDate;
     private int rating;
-    private List questionList;
-
-
 }

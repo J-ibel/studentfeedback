@@ -8,15 +8,5 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 public class Registration {
-    private String name;
-    private String surname;
-    private String ssn;
-    private Date dateOfBirth;
-    private String groupId;
-    private boolean isTeacher;
-    private String country;
-    private String username;
-    private String password;
-    private String email;
 
 }
