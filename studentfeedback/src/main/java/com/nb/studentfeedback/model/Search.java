@@ -6,12 +6,12 @@ import java.util.Date;
 
 @Data
 public class Search {
-    private String name;
-    private String ssn;
-    private String groupId;
-    private String surname;
-    private String country;
-    private Date dateOfBirth;
+    private String studendName;
+    private String studentSsn;
+    private String studentGroupId;
+    private String studetntSurname;
+    private String studentCountry;
+    private Date studentDateOfBirth;
 
 
 }
