@@ -1,8 +1,6 @@
 package com.nb.studentfeedback.model;
 
 import lombok.Data;
-import lombok.Generated;
-import lombok.Value;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,5 +14,8 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
+
+    private boolean isActive;
+
 
 }

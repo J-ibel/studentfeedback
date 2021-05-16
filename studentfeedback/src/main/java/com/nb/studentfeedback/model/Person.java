@@ -34,6 +34,9 @@ public class Person {
 
     private String email;
 
+    private boolean isActive;
+
+
 
 
 

@@ -1,12 +1,12 @@
 package com.nb.studentfeedback.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.List;
 
 @Data
 @Entity
@@ -23,6 +23,8 @@ public class QuestionAnswer {
     private LocalDate eventDate;
 
     private int rating;
+
+    private boolean isActive;
 
 
 }

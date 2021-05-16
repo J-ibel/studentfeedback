@@ -14,5 +14,8 @@ public class Group {
     @OneToMany
     private List<Course> courses;
 
+    private boolean isActive;
+
+
 
 }

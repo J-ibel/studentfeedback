@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
+
 @Entity
 @Data
 public class Quiz {
@@ -27,6 +28,7 @@ public class Quiz {
 
     private LocalDateTime answeredDate;
 
+    private boolean isActive;
 
 
 }
