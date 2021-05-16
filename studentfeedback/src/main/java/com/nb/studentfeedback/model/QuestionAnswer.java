@@ -16,18 +16,18 @@ public class QuestionAnswer {
     @Id
     private Long id;
 
-    @Column(nullable = false)
+
     private String question;
 
-    @Column(nullable = false)
+
     private int questionNumber;
 
-    @Column(nullable = false)
+
     private String answer;
 
-    @Column(nullable = false)
+
     private Date eventDate;
 
-    @Column(nullable = false)
+
     private int rating;
 }
