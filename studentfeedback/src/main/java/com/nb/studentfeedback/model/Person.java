@@ -11,40 +11,23 @@ import java.util.Date;
 public class Person {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
-
     private String name;
-
-
     private String surname;
-
-
     private String ssn;
-
-
     private Date dateOfBirth;
-
-
     private String groupId;
-
-
     private boolean isTeacher;
-
-
     private boolean isAdmin;
-
-
     private String country;
-
-
     private String username;
-
-
     private String password;
-
-
     private String email;
+
+
+
+
+
 
 }
