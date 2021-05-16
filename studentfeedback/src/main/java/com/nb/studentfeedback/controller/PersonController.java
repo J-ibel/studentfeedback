@@ -3,34 +3,32 @@ package com.nb.studentfeedback.controller;
 import com.nb.studentfeedback.model.Person;
 import com.nb.studentfeedback.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import javax.persistence.Id;
 
 
-
-@Controller
+@RestController("/person")
 public class PersonController {
-
-    private PersonService personService;
-
     @Autowired
-    public PersonController(PersonService personService) {
-        this.personService = personService;
-    }
-
-
+    private PersonService personService;
 
 
     @PostMapping
-    public String addPerson(@ModelAttribute("person") Person person){
-        personService.savePerson(person);
-        return "redirect:/";
+    public ResponseEntity<?> createPerson(@RequestParam Person person) {
+        personService.save(person);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<?> findPerson(@PathVariable Long id) {
 
+        Person person = personService.findById(id);
+        return new ResponseEntity<>(person, HttpStatus.OK);
 
-
+    }
 
 
 }
