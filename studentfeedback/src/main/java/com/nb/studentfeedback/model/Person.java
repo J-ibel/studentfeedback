@@ -13,16 +13,25 @@ public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     private String name;
+
     private String surname;
+
     private String ssn;
+
     private Date dateOfBirth;
-    private String groupId;
-    private boolean isTeacher;
-    private boolean isAdmin;
-    private String country;
-    private String username;
+
+    @OneToOne
+    private Group group;
+
+    @Enumerated (EnumType.STRING)
+    private PersonType personType;
+
+    private String countryCode;
+
     private String password;
+
     private String email;
 
 

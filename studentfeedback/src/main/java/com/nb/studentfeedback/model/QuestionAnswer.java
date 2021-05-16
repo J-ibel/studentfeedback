@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -14,10 +15,13 @@ public class QuestionAnswer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     private String question;
-    private int questionNumber;
+
     private String answer;
-    private Date eventDate;
+
+    private LocalDate eventDate;
+
     private int rating;
 
 

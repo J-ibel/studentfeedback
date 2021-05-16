@@ -1,7 +1,32 @@
 package com.nb.studentfeedback.model;
 
-import java.util.List;
+import lombok.Data;
 
+import javax.persistence.*;
+import java.time.LocalDateTime;
+import java.util.List;
+@Entity
+@Data
 public class Quiz {
-    private List<QuestionAnswer> questionAnswers;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    @OneToMany
+    private List<QuestionAnswer> defaultQuestions;
+
+    @OneToMany
+    private List<QuestionAnswer> additionalQuestions;
+
+    @OneToOne
+    private Person createdBy;
+
+    @OneToOne
+    private Person answeredBy;
+
+    private LocalDateTime createdDate;
+
+    private LocalDateTime answeredDate;
+
+
+
 }
