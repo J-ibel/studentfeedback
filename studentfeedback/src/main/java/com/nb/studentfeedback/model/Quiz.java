@@ -12,17 +12,23 @@ public class Quiz {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @OneToMany
+
+    @OneToMany(
+            mappedBy = "quiz"
+    )
     private List<QuestionAnswer> defaultQuestions;
 
-    @OneToMany
-    private List<QuestionAnswer> additionalQuestions;
+//    @OneToMany
+//    private List<QuestionAnswer> additionalQuestions;
 
-    @OneToOne
+
+    @OneToOne(
+            mappedBy = "quiz"
+    )
     private Person createdBy;
 
-    @OneToOne
-    private Person answeredBy;
+//    @OneToOne
+//    private Person answeredBy;
 
     private LocalDateTime createdDate;
 

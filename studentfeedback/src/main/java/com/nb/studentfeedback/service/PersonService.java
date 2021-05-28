@@ -16,11 +16,9 @@ public class PersonService {
     @Autowired
     private PersonRepository personRepository;
 
-
     public List<Person> findAll() {
         return personRepository.findAll();
     }
-
 
     public void save(Person person) {
         personRepository.saveAndFlush(person);
@@ -32,9 +30,9 @@ public class PersonService {
             return optional.get();
         } else {
             throw new RuntimeException(" Person not found for id: " + id);
-
         }
     }
+
     public void deleteById(Long id) {
         Person person = findById(id);
         person.setActive(false);
@@ -46,6 +44,4 @@ public class PersonService {
         person.setActive(true);
         save(person);
     }
-
-
 }
