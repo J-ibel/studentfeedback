@@ -1,6 +1,5 @@
 package com.nb.studentfeedback.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -22,8 +21,8 @@ public class Person {
 
     private Date dateOfBirth;
 
-    @OneToOne
-    private Group group;
+    @OneToOne(mappedBy = "person")
+    private StudentGroup studentGroup;
 
     @Enumerated (EnumType.STRING)
     private PersonType personType;
@@ -35,6 +34,13 @@ public class Person {
     private String email;
 
     private boolean isActive;
+
+    @OneToOne
+    @JoinColumn(
+            name = "quiz_id",
+            referencedColumnName = "id"
+    )
+    private Quiz quiz;
 
 
 

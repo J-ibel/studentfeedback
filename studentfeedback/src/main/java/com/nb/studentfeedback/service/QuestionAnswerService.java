@@ -11,12 +11,9 @@ import java.util.Optional;
 @Service
 public class QuestionAnswerService {
 
+    @Autowired
     private QuestionAnswerRepository questionAnswerRepository;
 
-    @Autowired
-    public QuestionAnswerService(QuestionAnswerRepository questionAnswerRepository) {
-        this.questionAnswerRepository = questionAnswerRepository;
-    }
     public List<QuestionAnswer> getAllQuestionAnswer() {
         return  questionAnswerRepository.findAll();
 
@@ -25,7 +22,7 @@ public class QuestionAnswerService {
         this.questionAnswerRepository.saveAndFlush(questionAnswer);
 
     }
-    public QuestionAnswer getQuestionAnswerById(long id) {
+    public QuestionAnswer getQuestionAnswerById(Long id) {
         Optional<QuestionAnswer> optional = questionAnswerRepository.findById(id);
         if (optional.isPresent()) {
             return optional.get();

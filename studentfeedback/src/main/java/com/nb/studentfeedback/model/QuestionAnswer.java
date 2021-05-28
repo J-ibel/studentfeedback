@@ -2,10 +2,7 @@ package com.nb.studentfeedback.model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Data
@@ -25,6 +22,15 @@ public class QuestionAnswer {
     private int rating;
 
     private boolean isActive;
+
+    @ManyToOne
+    @JoinColumn(
+            name = "quiz_id",
+            referencedColumnName = "id"
+    )
+    private Quiz quiz;
+
+
 
 
 }
